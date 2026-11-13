@@ -1,12 +1,19 @@
 {
   "name": "cashflow",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Personal expense tracker with a daily spending allowance",
-  "main": "server.js",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "concurrently -k -n api,web -c green,cyan \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "start": "concurrently -k -n api,web -c green,cyan \"npm run start -w backend\" \"npm run start -w frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.5"
   },
   "engines": {
     "node": ">=22.13"

@@ -1,3 +1,16 @@
 node_modules/
-data/
 .env
+.env.*
+
+# backend
+backend/dist/
+backend/data/
+
+# frontend
+frontend/.next/
+frontend/out/
+frontend/next-env.d.ts
+*.tsbuildinfo
+
+# legacy local database
+data/
