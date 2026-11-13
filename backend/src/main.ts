@@ -34,7 +34,8 @@ async function bootstrap() {
   app.useGlobalFilters(new ApiExceptionFilter());
   app.enableShutdownHooks();
 
-  const port = Number(process.env.PORT) || 4000;
+  // API_PORT, not PORT: when both apps run together, PORT usually belongs to the Next.js server.
+  const port = Number(process.env.API_PORT) || 4000;
   await app.listen(port);
   console.log(`Cashflow API running at http://localhost:${port}/api`);
 }
