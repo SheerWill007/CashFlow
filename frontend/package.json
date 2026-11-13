@@ -1,23 +1,25 @@
 {
   "name": "@cashflow/frontend",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "Cashflow web app (Next.js)",
+  "description": "Cashflow web app (Nuxt + Vue, TypeScript)",
+  "type": "module",
   "scripts": {
-    "dev": "next dev -p 3000",
-    "build": "next build",
-    "start": "next start -p 3000"
+    "dev": "nuxt dev --port 3000",
+    "build": "nuxt build",
+    "start": "node .output/server/index.mjs",
+    "typecheck": "nuxt typecheck",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "lenis": "^1.3.0",
-    "next": "^15.5.0",
-    "react": "~19.1.0",
-    "react-dom": "~19.1.0"
+    "nuxt": "~4.2.2",
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "vue-tsc": "~3.1.8"
   }
 }

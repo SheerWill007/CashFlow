@@ -7,9 +7,9 @@ backend/dist/
 backend/data/
 
 # frontend
-frontend/.next/
-frontend/out/
-frontend/next-env.d.ts
+frontend/.nuxt/
+frontend/.output/
+frontend/.data/
 *.tsbuildinfo
 
 # legacy local database
